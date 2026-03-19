@@ -359,7 +359,7 @@ header.scrolled { box-shadow: 0 2px 20px rgba(90, 70, 50, 0.1); }
   inset: 0;
   background:
     linear-gradient(rgba(198, 167, 94, 0.08), rgba(198, 167, 94, 0.08)),
-    url("../grand-palace-engraving.png") center/cover no-repeat;
+    url("../assets/images/grand-palace-engraving.png") center/cover no-repeat;
   opacity: 0.32;
   pointer-events: none;
 }
@@ -2041,7 +2041,7 @@ footer::before {
   bottom: 20px;
   width: 350px;
   height: 260px;
-  background: url("/frontend/grand-palace-engraving.png?v=20260316") no-repeat;
+  background: url("../assets/images/grand-palace-engraving.png") no-repeat;
   background-size: contain;
   opacity: 0.3;
   pointer-events: none;
