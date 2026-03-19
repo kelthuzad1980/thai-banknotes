@@ -1,0 +1,49 @@
+// SCSS Variables
+$cream: #F7F4ED;
+$gold: #C6A75E;
+$burgundy: #7B2C2C;
+$brown: #5A4632;
+$light-grey: #E8E6DF;
+$dark-brown: #3D2E24;
+$parchment: #F5F1E8;
+$text-dark: #2C2418;
+$text-light: #F7F4ED;
+$text-muted: #8B7D6B;
+
+$desktop: 1200px;
+$tablet: 768px;
+$mobile: 480px;
+
+$font-heading: 'Cinzel', serif;
+$font-subheading: 'Playfair Display', serif;
+$font-body: 'Source Serif Pro', serif;
+$font-accent: 'Libre Baskerville', serif;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (max-width: $desktop) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $tablet) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+}
+
+@mixin gold-border {
+  border: 1px solid $gold;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba($gold, 0.3);
+    pointer-events: none;
+  }
+}
+
+@mixin elegant-shadow {
+  box-shadow: 
+    0 4px 6px rgba($brown, 0.1),
+    0 10px 20px rgba($brown, 0.08),
+    0 0 0 1px rgba($gold, 0.1);
+}
