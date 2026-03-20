@@ -6,25 +6,7 @@
 /* ── Timeline panorama upgrade ─────────────────────────────────── */
 .timeline-panorama {
   position: relative;
-  overflow: visible;
-  border: 1px solid rgba(198,167,94,.2);
-  margin-bottom: 2.5rem;
-  line-height: 0; /* remove inline-block gap */
-}
-.timeline-panorama img {
-  width: 100%;
-  height: auto;        /* natural height — no cropping */
-  object-fit: unset;
-  display: block;
-  opacity: .75;
-  filter: sepia(.12) contrast(.96) brightness(1.01);
-  transition: transform 8s ease;
-}
-.timeline-panorama:hover img { transform: scale(1.015); }
-/* ── Timeline panorama upgrade ─────────────────────────────────── */
-.timeline-panorama {
-  position: relative;
-  overflow: hidden;      /* clip needed so fade sits inside image */
+  overflow: hidden;
   border: 1px solid rgba(198,167,94,.2);
   margin-bottom: 2.5rem;
   line-height: 0;
@@ -118,7 +100,7 @@
 /* ── Dark page hero (for inner pages with dark bg) ──────────────── */
 .page-hero-dark {
   background: var(--dark-brown);
-  padding: 7rem 0 3.5rem;
+  padding-bottom: 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -282,7 +264,7 @@
 /* ── Note hero (banknote-detail.html) ───────────────────────────── */
 .note-hero {
   background: var(--dark-brown);
-  padding: 7rem 0 0;
+  padding-bottom: 0;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -568,7 +550,7 @@
 /* ── Person page ────────────────────────────────────────────────── */
 .person-hero {
   background: var(--dark-brown);
-  padding: 7rem 0 3.5rem;
+  padding-bottom: 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -580,20 +562,12 @@
   opacity: .1;
 }
 .person-hero .container { position: relative; z-index: 1; }
-.person-portrait {
-  width: 108px; height: 108px;
-  border-radius: 50%;
-  border: 3px solid var(--gold);
-  object-fit: cover;
-  margin: 0 auto 1.4rem;
-  filter: sepia(.15);
-  box-shadow: 0 0 0 6px rgba(198,167,94,.12);
-}
 .person-name {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 3vw, 2.4rem);
   color: #F7F4ED;
   margin-bottom: .3rem;
+  margin-top: 1.4rem;
 }
 .person-thai { font-size: 1rem; color: rgba(247,244,237,.45); margin-bottom: .75rem; }
 .person-role-badge {
@@ -673,7 +647,7 @@
 /* ── Signature pair header (single sig page) ─────────────────────── */
 .sig-pair-hero {
   background: var(--dark-brown);
-  padding: 7rem 0 3.5rem;
+  padding-bottom: 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -730,7 +704,7 @@
 /* ── Variety page header ─────────────────────────────────────────── */
 .variety-hero {
   background: var(--dark-brown);
-  padding: 7rem 0 3.5rem;
+  padding-bottom: 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -770,7 +744,7 @@
 /* ── Series page header ─────────────────────────────────────────── */
 .series-hero {
   background: var(--dark-brown);
-  padding: 7rem 0 3.5rem;
+  padding-bottom: 3.5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -916,33 +890,8 @@
 
 /* Header logo — уменьшить на 15% */
 .logo-img {
-  width: 61px !important;
+  width: 61px !important;  /* 72 × 0.85 = 61.2 */
   height: auto !important;
-}
-
-/* Footer logo wrapper */
-.footer__logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  margin-bottom: .9rem;
-  line-height: 1;
-}
-.footer__logo-img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  flex-shrink: 0;
-  display: block;
-  margin-top: 0;
-  filter: brightness(0) saturate(100%) invert(72%) sepia(38%) saturate(500%) hue-rotate(5deg) brightness(95%);
-  opacity: .85;
-}
-
-/* Footer brand text — выровнять по центру относительно иконки */
-.footer__logo-wrap .footer__brand {
-  margin-bottom: 0;
-  line-height: 1.2;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -976,48 +925,6 @@
 .masthead {
   background: var(--m-bg-dark);
   border-bottom: 1px solid rgba(198,167,94,.18);
-}
-
-.masthead__top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .6rem var(--m-gutter);
-  border-bottom: 1px solid rgba(198,167,94,.1);
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.masthead__tagline {
-  font-family: 'Cinzel', serif;
-  font-size: .58rem;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: rgba(198,167,94,.5);
-}
-
-.masthead__actions {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.masthead__action-btn {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(247,244,237,.45);
-  border: 1px solid rgba(198,167,94,.15);
-  border-radius: var(--m-r);
-  transition: all var(--m-dur) var(--m-ease);
-  font-size: .8rem;
-}
-
-.masthead__action-btn:hover {
-  color: var(--m-gold-lt);
-  border-color: rgba(198,167,94,.4);
 }
 
 .masthead__main {
@@ -1211,31 +1118,6 @@
   letter-spacing: .2em;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .masthead__search-form {
-    display: none;
-  }
-  .masthead__main {
-    grid-template-columns: auto 1fr auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .masthead__top {
-    display: none;
-  }
-  .masthead__nav {
-    display: none;
-  }
-  .masthead__hamburger {
-    display: flex;
-  }
-  .masthead__main {
-    justify-content: space-between;
-  }
-}
-
 /* ═══════════════════════════════════════════════════════════
    SITE FOOTER — Museum Style
 ═══════════════════════════════════════════════════════════ */
@@ -1256,6 +1138,18 @@
   grid-template-columns: 2.5fr 1fr 1fr 1fr;
   gap: 4rem;
   margin-bottom: 4rem;
+}
+
+.footer__brand-block {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.footer__brand-block img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
 }
 
 .footer__brand-name {
@@ -1304,7 +1198,7 @@
 .footer__links {
   display: flex;
   flex-direction: column;
-  gap: .55rem;
+  gap: 0;
 }
 
 .footer__link {
@@ -1339,24 +1233,6 @@
   letter-spacing: .3em;
   text-transform: uppercase;
   color: rgba(198,167,94,.3);
-}
-
-@media (max-width: 1100px) {
-  .footer__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer__grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .footer__bottom {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1474,18 +1350,6 @@
 /* ═══════════════════════════════════════════════════════════
    COMMON UTILITY CLASSES
 ═══════════════════════════════════════════════════════════ */
-.footer__brand-block {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-}
-
-.footer__brand-block img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-}
-
 .body-text {
   font-family: 'Source Serif Pro', Georgia, serif;
   font-size: 1rem;
@@ -1504,6 +1368,10 @@
 
 .mt-2 {
   margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
 }
 
 .flex-row {
@@ -1532,10 +1400,6 @@
 
 .spec-link {
   color: var(--m-gold);
-}
-
-.mb-2 {
-  margin-bottom: 2rem;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1738,18 +1602,6 @@
   padding: 0 .75rem;
 }
 
-@media(max-width: 900px) {
-  .catalog-wrap { grid-template-columns: 1fr; }
-  .catalog-sidebar { position: static; height: auto; display: none; }
-  .catalog-sidebar.open { display: block; }
-  .banknote-grid.list-view { display: grid; grid-template-columns: repeat(2,1fr); }
-  .banknote-grid.list-view .banknote-card { display: block; }
-}
-
-@media(max-width: 600px) {
-  .catalog-main { padding: 1.5rem; }
-}
-
 /* ═══════════════════════════════════════════════════════════
    EMPTY STATE
 ═══════════════════════════════════════════════════════════ */
@@ -1779,4 +1631,46 @@
   font-size: .85rem;
   color: var(--text-muted);
   font-style: italic;
+}
+
+/* Footer logo wrapper */
+.footer__logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin-bottom: .9rem;
+}
+.footer__logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(38%) saturate(500%) hue-rotate(5deg) brightness(95%);
+  opacity: .85;
+}
+
+/* ── Fix: gap/stripe between header and dark hero sections ── */
+.note-hero,
+.page-hero,
+.page-hero-dark,
+.series-header,
+.signature-header,
+.variety-header,
+.person-header,
+.commemorative-hero {
+  margin-top: 0;
+}
+
+/* На страницах с тёмным hero — убираем просвет от body background */
+.note-hero { padding-top: calc(3rem + 68px); }
+.page-hero,
+.series-header,
+.series-hero,
+.page-hero-dark,
+.commemorative-hero,
+.signature-header,
+.variety-header,
+.person-header,
+.person-hero {
+  padding-top: calc(3rem + 68px);
 }

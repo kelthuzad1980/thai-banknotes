@@ -12,48 +12,51 @@
   <link rel="stylesheet" href="css/upgrades.css">
 </head>
 <body>
+  <!-- Masthead -->
   <header id="masthead">
-  <div class="masthead">
-    <div class="masthead__main">
-      <a href="index.html" class="masthead__logo">
-        <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
-        <div class="masthead__logo-text">
-          <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
-          <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
-        </div>
-      </a>
-      <nav class="masthead__nav" aria-label="Primary">
-        <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="catalog.html" class="mnav__link">Series</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="catalog.html" class="mnav__link active">Banknotes</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="#" class="mnav__link">About</a></div>
-      </nav>
-      <form class="masthead__search-form" role="search" onsubmit="return false">
-        <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
-        <button type="submit" class="masthead__search-submit" aria-label="Submit search">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+    <div class="masthead">
+      <div class="masthead__main">
+        <a href="index.html" class="masthead__logo">
+          <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
+          <div class="masthead__logo-text">
+            <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
+            <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
+          </div>
+        </a>
+        <nav class="masthead__nav" aria-label="Primary">
+          <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="catalog.html" class="mnav__link">Banknotes</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="commemorative.html" class="mnav__link">Commemorative</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="about.html" class="mnav__link">About</a></div>
+        </nav>
+        <form class="masthead__search-form" role="search" onsubmit="return false">
+          <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
+          <button type="submit" class="masthead__search-submit" aria-label="Submit search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+        </form>
+        <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
         </button>
-      </form>
-      <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<nav class="mobile-nav" id="mobileNav">
-  <a href="index.html" class="mnav__link">Home</a>
-  <a href="catalog.html" class="mnav__link active">Series & Banknotes</a>
-  <a href="signature.html" class="mnav__link">Signatures</a>
-  <a href="#" class="mnav__link">About</a>
-</nav>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mnav__link">Home</a>
+    <a href="catalog.html" class="mnav__link">Banknotes</a>
+    <a href="commemorative.html" class="mnav__link">Commemorative</a>
+    <a href="signature.html" class="mnav__link">Signatures</a>
+    <a href="about.html" class="mnav__link">About</a>
+  </nav>
 
-<div style="height:110px"></div>
+  <div style="height:10px"></div>
 
   <!-- HERO -->
   <section class="note-hero">
@@ -64,7 +67,7 @@
       <div class="note-hero__name">One Hundred Baht — Red-Brown Issue</div>
       <div class="note-hero__years">1997 — 2004</div>
       <div class="note-hero__rule"></div>
-      <div class="page-hero-dark__breadcrumb" style="margin-top:.9rem"><a href="index.html">Home</a> / <a href="catalog.html">Catalogue</a> / <a href="series.html">Fourteenth Series</a> / 100 Baht</div>
+      <div class="page-hero-dark__breadcrumb" style="margin-top:0.9rem"><a href="index.html">Home</a> / <a href="catalog.html">Catalogue</a> / <a href="series.html">Fourteenth Series</a> / 100 Baht</div>
     </div>
   </section>
 
@@ -164,35 +167,38 @@
         <p class="footer__desc">A scholarly digital archive dedicated to the comprehensive documentation of Thai currency history, from the first series of 1880 to the present-day Seventeenth Series.</p>
       </div>
 
-      <div>
-        <div class="footer__head">Catalogue</div>
-        <ul class="footer__links">
-          <li><a href="catalog.html" class="footer__link">All Series</a></li>
-          <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
-          <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
-          <li><a href="signature.html" class="footer__link">Signatures</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Menu</div>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
+            <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
+            <li><a href="signature.html" class="footer__link">Signatures</a></li>
+  
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
 
-      <div>
-        <div class="footer__head">By Era</div>
-        <ul class="footer__links">
-          <li><a href="catalog.html?era=rama-v" class="footer__link">Rama V · 1868–1910</a></li>
-          <li><a href="catalog.html?era=rama-vi" class="footer__link">Rama VI · 1910–1925</a></li>
-          <li><a href="catalog.html?era=rama-ix" class="footer__link">Rama IX · 1946–2016</a></li>
-          <li><a href="catalog.html?era=rama-x" class="footer__link">Rama X · 2016–Present</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Series</div>
+          <ul class="footer__links">
+            <li><a href="series.html?series=first-series" class="footer__link">First Series</a></li>
+            <li><a href="series.html?series=fifth-series" class="footer__link">Fifth Series</a></li>
+            <li><a href="series.html?series=tenth-series" class="footer__link">Tenth Series</a></li>
+            <li><a href="series.html?series=fifteenth-series" class="footer__link">Fifteenth Series</a></li>
+          </ul>
+        </div>
 
-      <div>
-        <div class="footer__head">Information</div>
-        <ul class="footer__links">
-          <li><a href="#" class="footer__link">About the Archive</a></li>
-          <li><a href="#" class="footer__link">Methodology</a></li>
-          <li><a href="#" class="footer__link">Bibliography</a></li>
-          <li><a href="#" class="footer__link">Contact</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Information</div>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="#" class="footer__link">Bibliography</a></li>
+            <li><a href="#" class="footer__link">Methodology</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
     </div>
 
     <div class="footer__bottom">

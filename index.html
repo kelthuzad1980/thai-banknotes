@@ -28,13 +28,13 @@
         <nav class="masthead__nav" aria-label="Primary">
           <div class="mnav__item"><a href="index.html" class="mnav__link active">Home</a></div>
           <div class="mnav__sep"></div>
-          <div class="mnav__item"><a href="catalog.html" class="mnav__link">Series</a></div>
-          <div class="mnav__sep"></div>
           <div class="mnav__item"><a href="catalog.html" class="mnav__link">Banknotes</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="commemorative.html" class="mnav__link">Commemorative</a></div>
           <div class="mnav__sep"></div>
           <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
           <div class="mnav__sep"></div>
-          <div class="mnav__item"><a href="#" class="mnav__link">About</a></div>
+          <div class="mnav__item"><a href="about.html" class="mnav__link">About</a></div>
         </nav>
         <form class="masthead__search-form" role="search" onsubmit="return false">
           <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
@@ -52,12 +52,13 @@
   <!-- Mobile Navigation -->
   <nav class="mobile-nav" id="mobileNav">
     <a href="index.html" class="mnav__link active">Home</a>
-    <a href="catalog.html" class="mnav__link">Series & Banknotes</a>
+    <a href="catalog.html" class="mnav__link">Banknotes</a>
+    <a href="commemorative.html" class="mnav__link">Commemorative</a>
     <a href="signature.html" class="mnav__link">Signatures</a>
-    <a href="#" class="mnav__link">About</a>
+    <a href="about.html" class="mnav__link">About</a>
   </nav>
 
-  <div style="height:110px"></div>
+  <div style="height:10px"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -368,10 +369,10 @@ C140 136 150 136 160 130Z"/>
           <div class="series-card__title">Sixteenth Series</div>
           <div class="series-card__year">2019 - 2024</div>
         </a>
-        <a href="series.html?series=seventeenth-series" class="series-card series-xvii">
-          <span class="series-roman">Series XVII</span>
-          <span class="series-name">Seventeenth Series</span>
-          <span class="series-years">2024 - Present</span>
+        <a href="series.html?series=seventeenth-series" class="series-card series-xvii fade-in stagger-4">
+          <div class="series-card__number">Series XVII</div>
+          <div class="series-card__title">Seventeenth Series</div>
+          <div class="series-card__year">2024 - Present</div>
         </a>
       </div>
     </div>
@@ -452,32 +453,35 @@ C140 136 150 136 160 130Z"/>
         </div>
 
         <div>
-          <div class="footer__head">Catalogue</div>
+          <div class="footer__head">Menu</div>
           <ul class="footer__links">
-            <li><a href="catalog.html" class="footer__link">All Series</a></li>
+            <li><a href="index.html" class="footer__link">Home</a></li>
             <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
             <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
             <li><a href="signature.html" class="footer__link">Signatures</a></li>
+  
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer__head">Series</div>
           <ul class="footer__links">
-            <li><a href="series.html" class="footer__link">First Series</a></li>
-            <li><a href="series.html" class="footer__link">Fifth Series</a></li>
-            <li><a href="series.html" class="footer__link">Tenth Series</a></li>
-            <li><a href="series.html" class="footer__link">Fifteenth Series</a></li>
+            <li><a href="series.html?series=first-series" class="footer__link">First Series</a></li>
+            <li><a href="series.html?series=fifth-series" class="footer__link">Fifth Series</a></li>
+            <li><a href="series.html?series=tenth-series" class="footer__link">Tenth Series</a></li>
+            <li><a href="series.html?series=fifteenth-series" class="footer__link">Fifteenth Series</a></li>
           </ul>
         </div>
 
         <div>
           <div class="footer__head">Information</div>
           <ul class="footer__links">
-            <li><a href="#" class="footer__link">About the Archive</a></li>
-            <li><a href="#" class="footer__link">Methodology</a></li>
+            <li><a href="about.html" class="footer__link">About</a></li>
             <li><a href="#" class="footer__link">Bibliography</a></li>
-            <li><a href="#" class="footer__link">Contact</a></li>
+            <li><a href="#" class="footer__link">Methodology</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
           </ul>
         </div>
       </div>

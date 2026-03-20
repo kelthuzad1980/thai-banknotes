@@ -14,60 +14,59 @@
 <body>
 
 <!-- Masthead -->
-<header id="masthead">
-  <div class="masthead">
-    <div class="masthead__main">
-      <a href="index.html" class="masthead__logo">
-        <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
-        <div class="masthead__logo-text">
-          <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
-          <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
-        </div>
-      </a>
-      <nav class="masthead__nav" aria-label="Primary">
-        <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="catalog.html" class="mnav__link active">Series</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="catalog.html" class="mnav__link">Banknotes</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
-        <div class="mnav__sep"></div>
-        <div class="mnav__item"><a href="#" class="mnav__link">About</a></div>
-      </nav>
-      <form class="masthead__search-form" role="search" onsubmit="return false">
-        <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
-        <button type="submit" class="masthead__search-submit" aria-label="Submit search">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+  <header id="masthead">
+    <div class="masthead">
+      <div class="masthead__main">
+        <a href="index.html" class="masthead__logo">
+          <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
+          <div class="masthead__logo-text">
+            <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
+            <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
+          </div>
+        </a>
+        <nav class="masthead__nav" aria-label="Primary">
+          <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="catalog.html" class="mnav__link active">Banknotes</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="commemorative.html" class="mnav__link">Commemorative</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
+          <div class="mnav__sep"></div>
+          <div class="mnav__item"><a href="about.html" class="mnav__link">About</a></div>
+        </nav>
+        <form class="masthead__search-form" role="search" onsubmit="return false">
+          <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
+          <button type="submit" class="masthead__search-submit" aria-label="Submit search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+          </button>
+        </form>
+        <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
         </button>
-      </form>
-      <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Mobile Navigation -->
-<nav class="mobile-nav" id="mobileNav">
-  <a href="index.html" class="mnav__link">Home</a>
-  <a href="catalog.html" class="mnav__link active">Series & Banknotes</a>
-  <a href="signature.html" class="mnav__link">Signatures</a>
-  <a href="#" class="mnav__link">About</a>
-</nav>
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="mnav__link">Home</a>
+    <a href="catalog.html" class="mnav__link active">Banknotes</a>
+    <a href="commemorative.html" class="mnav__link">Commemorative</a>
+    <a href="signature.html" class="mnav__link">Signatures</a>
+    <a href="about.html" class="mnav__link">About</a>
+  </nav>
 
-<div style="height:110px"></div>
+  <div style="height:10px"></div>
 
 <!-- ── PAGE HERO ── -->
-<section class="page-hero">
-  <div class="page-hero__bg" style="background-image:url('assets/images/grand-palace-engraving1.png');background-position:center 20%"></div>
+<section class="page-hero-dark">
+  <div class="page-hero-dark__bg" style="background-image:url('assets/images/grand-palace-engraving1.png');background-position:center 20%"></div>
   <div class="container">
-    <div class="page-hero__content">
-      <span class="page-hero__eyebrow">Complete Reference</span>
-      <h1 class="page-hero__title">The Catalogue</h1>
-      <div class="page-hero__divider"></div>
-      <p class="page-hero__subtitle">17 series · 180+ banknotes · 6 royal reigns</p>
-    </div>
+    <span class="page-hero-dark__eyebrow">Complete Reference</span>
+    <h1 class="page-hero-dark__title">The Catalogue</h1>
+    <div class="page-hero-dark__rule"></div>
+    <p class="page-hero-dark__sub">17 series · 180+ banknotes · 6 royal reigns</p>
   </div>
 </section>
 
@@ -204,7 +203,7 @@
       </a>
 
       <a href="banknote-detail.html" class="banknote-card fade-in stagger-1" data-era="rama-ix" data-denom="5" data-rarity="scarce" data-type="circulation">
-        <div class="banknote-card__image"><img src="https://placehold.co/400x225/3D2E24/C6A75E?text=5+Baht+%221955%29" alt="5 Baht Ninth Series"><div class="banknote-card__overlay"><span>View Details</span></div></div>
+        <div class="banknote-card__image"><img src="https://placehold.co/400x225/3D2E24/C6A75E?text=5+Baht+(1955)" alt="5 Baht Ninth Series"><div class="banknote-card__overlay"><span>View Details</span></div></div>
         <div class="banknote-card__content"><div class="banknote-card__denomination">5 Baht</div><div class="banknote-card__series">Ninth Series</div><div class="banknote-card__meta"><span class="banknote-card__year">1955</span><span class="banknote-card__rarity badge badge--scarce">Scarce</span></div></div>
       </a>
 
@@ -308,35 +307,38 @@
         <p class="footer__desc">A scholarly digital archive dedicated to the comprehensive documentation of Thai currency history, from the first series of 1880 to the present-day Seventeenth Series.</p>
       </div>
 
-      <div>
-        <div class="footer__head">Catalogue</div>
-        <ul class="footer__links">
-          <li><a href="catalog.html" class="footer__link">All Series</a></li>
-          <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
-          <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
-          <li><a href="signature.html" class="footer__link">Signatures</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Menu</div>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Home</a></li>
+            <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
+            <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
+            <li><a href="signature.html" class="footer__link">Signatures</a></li>
+  
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
 
-      <div>
-        <div class="footer__head">By Era</div>
-        <ul class="footer__links">
-          <li><a href="catalog.html?era=rama-v" class="footer__link">Rama V · 1868–1910</a></li>
-          <li><a href="catalog.html?era=rama-vi" class="footer__link">Rama VI · 1910–1925</a></li>
-          <li><a href="catalog.html?era=rama-ix" class="footer__link">Rama IX · 1946–2016</a></li>
-          <li><a href="catalog.html?era=rama-x" class="footer__link">Rama X · 2016–Present</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Series</div>
+          <ul class="footer__links">
+            <li><a href="series.html?series=first-series" class="footer__link">First Series</a></li>
+            <li><a href="series.html?series=fifth-series" class="footer__link">Fifth Series</a></li>
+            <li><a href="series.html?series=tenth-series" class="footer__link">Tenth Series</a></li>
+            <li><a href="series.html?series=fifteenth-series" class="footer__link">Fifteenth Series</a></li>
+          </ul>
+        </div>
 
-      <div>
-        <div class="footer__head">Information</div>
-        <ul class="footer__links">
-          <li><a href="#" class="footer__link">About the Archive</a></li>
-          <li><a href="#" class="footer__link">Methodology</a></li>
-          <li><a href="#" class="footer__link">Bibliography</a></li>
-          <li><a href="#" class="footer__link">Contact</a></li>
-        </ul>
-      </div>
+        <div>
+          <div class="footer__head">Information</div>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About</a></li>
+            <li><a href="#" class="footer__link">Bibliography</a></li>
+            <li><a href="#" class="footer__link">Methodology</a></li>
+            <li><a href="contact.html" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
     </div>
 
     <div class="footer__bottom">
