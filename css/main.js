@@ -1,30 +1,24 @@
 /* ============================================================
    THAI BANKNOTES CATALOGUE — main.js
-   v4 · Masthead header
+   v3 · Filters conflict resolved — handled by filters.js only
    ============================================================ */
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     1. MASTHEAD — scroll shadow
+     1. HEADER — scroll detection & active link
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  const masthead = document.getElementById('masthead');
-  if (masthead) {
-    const tick = () => {
-      if (window.scrollY > 60) {
-        masthead.style.boxShadow = '0 4px 32px rgba(0,0,0,.35)';
-      } else {
-        masthead.style.boxShadow = 'none';
-      }
-    };
+  const header = document.getElementById('header');
+  if (header) {
+    const tick = () => header.classList.toggle('scrolled', window.scrollY > 60);
     window.addEventListener('scroll', tick, { passive: true });
     tick();
   }
 
   // Highlight active nav link by current page
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.mnav__link').forEach(a => {
+  document.querySelectorAll('.navbar__link').forEach(a => {
     const href = a.getAttribute('href')?.split('?')[0];
     if (href === page) a.classList.add('active');
     else if (page === '' && href === 'index.html') a.classList.add('active');

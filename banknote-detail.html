@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>100 Baht — Fourteenth Series | Thai Banknotes Catalogue</title>
+  <meta name="description" content="100 Baht banknote from the Fourteenth Series (1997–2004). Specifications, varieties, and related notes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -11,7 +12,48 @@
   <link rel="stylesheet" href="css/upgrades.css">
 </head>
 <body>
-  <header id="header"><nav class="navbar"><a href="index.html" class="navbar__logo"><div class="brand"><img src="assets/images/lotus-logo.png" class="logo-img" alt="Thai Banknotes"><div class="logo-text"><div class="brand-top"><span>Thai</span><span class="brand-line"></span></div><div class="brand-bottom">Banknotes</div></div></div></a><ul class="navbar__nav"><li><a href="catalog.html" class="navbar__link">Series</a></li><li><a href="catalog.html" class="navbar__link active">Banknotes</a></li><li><a href="signature.html" class="navbar__link">Signatures</a></li><li><a href="index.html" class="navbar__link">Home</a></li></ul><div class="navbar__actions"><button class="navbar__search" id="searchBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button><button class="navbar__lang"><span>🇹🇭</span></button><button class="navbar__hamburger" id="hamburger"><span></span><span></span><span></span></button></div></nav></header>
+  <header id="masthead">
+  <div class="masthead">
+    <div class="masthead__main">
+      <a href="index.html" class="masthead__logo">
+        <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
+        <div class="masthead__logo-text">
+          <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
+          <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
+        </div>
+      </a>
+      <nav class="masthead__nav" aria-label="Primary">
+        <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="catalog.html" class="mnav__link">Series</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="catalog.html" class="mnav__link active">Banknotes</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="#" class="mnav__link">About</a></div>
+      </nav>
+      <form class="masthead__search-form" role="search" onsubmit="return false">
+        <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
+        <button type="submit" class="masthead__search-submit" aria-label="Submit search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </form>
+      <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mnav__link">Home</a>
+  <a href="catalog.html" class="mnav__link active">Series & Banknotes</a>
+  <a href="signature.html" class="mnav__link">Signatures</a>
+  <a href="#" class="mnav__link">About</a>
+</nav>
+
+<div style="height:110px"></div>
 
   <!-- HERO -->
   <section class="note-hero">
@@ -47,9 +89,9 @@
       <!-- Main -->
       <div>
         <div class="mus-section-title">Description</div>
-        <p style="font-family:'Source Serif Pro',Georgia,serif;font-size:1rem;line-height:1.82;color:var(--text-dark);margin-bottom:1rem">The One Hundred Baht note of the Fourteenth Series was issued on 18 November 2004. It represents one of the most widely circulated denominations of its era, characterised by a distinctive red-brown palette and enhanced security features introduced following the 1997 financial crisis.</p>
-        <p style="font-family:'Source Serif Pro',Georgia,serif;font-size:1rem;line-height:1.82;color:var(--text-dark);margin-bottom:1rem">The obverse features a formal portrait of King Bhumibol Adulyadej in royal regalia, flanked by the Royal Garuda emblem. The reverse depicts Wat Phra Kaew within the Grand Palace compound.</p>
-        <p style="font-family:'Source Serif Pro',Georgia,serif;font-size:1rem;line-height:1.82;color:var(--text-dark);margin-bottom:2.5rem">Printed by Thomas De La Rue in England, incorporating an electrotype watermark, a metallic security thread, and micro-printing along the borders.</p>
+        <p class="body-text">The One Hundred Baht note of the Fourteenth Series was issued on 18 November 2004. It represents one of the most widely circulated denominations of its era, characterised by a distinctive red-brown palette and enhanced security features introduced following the 1997 financial crisis.</p>
+        <p class="body-text">The obverse features a formal portrait of King Bhumibol Adulyadej in royal regalia, flanked by the Royal Garuda emblem. The reverse depicts Wat Phra Kaew within the Grand Palace compound.</p>
+        <p class="body-text mt-2">Printed by Thomas De La Rue in England, incorporating an electrotype watermark, a metallic security thread, and micro-printing along the borders.</p>
 
         <!-- Varieties -->
         <div class="mus-section-title">Varieties</div>
@@ -69,7 +111,7 @@
           <div class="var-meta"><span class="var-year">2006</span><span class="rar-badge">Common</span></div>
         </a>
 
-        <div style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(198,167,94,.2);display:flex;gap:1rem;flex-wrap:wrap">
+        <div class="btn-row">
           <a href="catalog.html" class="btn">← Back to Catalogue</a>
           <a href="series.html" class="btn">View Fourteenth Series</a>
         </div>
@@ -90,15 +132,6 @@
           <div class="spec-row-m"><span class="spec-lbl">Varieties</span><span class="spec-val">3 known</span></div>
           <div class="spec-row-m"><span class="spec-lbl">Rarity</span><span class="spec-val"><span class="mus-badge common">Common</span></span></div>
         </div>
-        <div class="price-sidebar">
-          <div class="price-sidebar__title">Price Guide (฿ Thai Baht)</div>
-          <div class="price-grid-m">
-            <div class="price-cell"><span class="price-cond">G</span><div class="price-val">120</div></div>
-            <div class="price-cell"><span class="price-cond">F</span><div class="price-val">180</div></div>
-            <div class="price-cell"><span class="price-cond">XF</span><div class="price-val">350</div></div>
-            <div class="price-cell"><span class="price-cond">UNC</span><div class="price-val">750</div></div>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -117,8 +150,58 @@
     </div>
   </section>
 
-  <footer><div class="container"><div class="footer__grid"><div><div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem"><img src="assets/images/lotus-logo.png" style="width:36px;height:36px;object-fit:contain" alt=""><div class="footer__brand">Thai Banknotes Catalogue</div></div><p class="footer__text">A scholarly digital archive of Thai currency from 1880 to present day.</p></div><div><h4 class="footer__title">Catalogue</h4><ul class="footer__links"><li><a href="catalog.html">All Series</a></li><li><a href="commemorative.html">Commemorative</a></li><li><a href="signature.html">Signatures</a></li></ul></div><div><h4 class="footer__title">Eras</h4><ul class="footer__links"><li><a href="catalog.html?era=rama-v">Rama V</a></li><li><a href="catalog.html?era=rama-ix">Rama IX</a></li><li><a href="catalog.html?era=rama-x">Rama X</a></li></ul></div><div><h4 class="footer__title">Info</h4><ul class="footer__links"><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div></div><div class="footer__bottom"><p>© 2024 Thai Banknotes Catalogue.</p></div></div></footer>
-  <div class="search-overlay" id="searchOverlay"><button class="search-close" id="searchClose">✕</button><div class="search-box"><input type="text" class="search-box__input" id="searchInput" placeholder="Search banknotes…"></div></div>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-block">
+          <img src="assets/images/lotus-logo.png" alt="Logo">
+          <div>
+            <div class="footer__brand-name"><span>Thai</span> Banknotes</div>
+            <div class="footer__brand-sub">Catalogue & Digital Archive</div>
+          </div>
+        </div>
+        <p class="footer__desc">A scholarly digital archive dedicated to the comprehensive documentation of Thai currency history, from the first series of 1880 to the present-day Seventeenth Series.</p>
+      </div>
+
+      <div>
+        <div class="footer__head">Catalogue</div>
+        <ul class="footer__links">
+          <li><a href="catalog.html" class="footer__link">All Series</a></li>
+          <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
+          <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
+          <li><a href="signature.html" class="footer__link">Signatures</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__head">By Era</div>
+        <ul class="footer__links">
+          <li><a href="catalog.html?era=rama-v" class="footer__link">Rama V · 1868–1910</a></li>
+          <li><a href="catalog.html?era=rama-vi" class="footer__link">Rama VI · 1910–1925</a></li>
+          <li><a href="catalog.html?era=rama-ix" class="footer__link">Rama IX · 1946–2016</a></li>
+          <li><a href="catalog.html?era=rama-x" class="footer__link">Rama X · 2016–Present</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__head">Information</div>
+        <ul class="footer__links">
+          <li><a href="#" class="footer__link">About the Archive</a></li>
+          <li><a href="#" class="footer__link">Methodology</a></li>
+          <li><a href="#" class="footer__link">Bibliography</a></li>
+          <li><a href="#" class="footer__link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 Thai Banknotes Catalogue. For scholarly and educational purposes.</p>
+      <span class="footer__orn">◈ Digital Archive ◈</span>
+    </div>
+  </div>
+</footer>
+  <div class="search-overlay" id="searchOverlay"><button class="search-close" id="searchClose">&times;</button><div class="search-box"><input type="text" class="search-box__input" id="searchInput" placeholder="Search banknotes…"></div></div>
   <script src="js/api.js"></script>
   <script src="js/main.js"></script>
 </body>

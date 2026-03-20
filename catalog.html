@@ -10,205 +10,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/upgrades.css">
-  <style>
-    /* ── Catalog-specific layout ────────────────────────────── */
-    .catalog-wrap { display: grid; grid-template-columns: 260px 1fr; gap: 0; min-height: 70vh; }
-    .catalog-sidebar {
-      background: #FAF7F0;
-      border-right: 1px solid rgba(198,167,94,.18);
-      padding: 2.5rem 2rem;
-      position: sticky;
-      top: 68px;
-      height: calc(100vh - 68px);
-      overflow-y: auto;
-    }
-    .catalog-sidebar::-webkit-scrollbar { width: 4px; }
-    .catalog-sidebar::-webkit-scrollbar-thumb { background: rgba(198,167,94,.3); border-radius: 2px; }
-    .catalog-main { background: #F7F4ED; padding: 2.5rem; }
-
-    .filter-group { margin-bottom: 2rem; }
-    .filter-group__title {
-      font-family: 'Cinzel', serif;
-      font-size: .62rem;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      padding-bottom: .5rem;
-      border-bottom: 1px solid rgba(198,167,94,.2);
-    }
-    .filter-option {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .4rem 0;
-      cursor: pointer;
-      font-size: .82rem;
-      color: var(--text-dark);
-      transition: color .2s;
-    }
-    .filter-option:hover { color: var(--gold); }
-    .filter-option input[type="checkbox"] {
-      width: 14px; height: 14px;
-      border: 1px solid rgba(198,167,94,.4);
-      accent-color: var(--gold);
-      cursor: pointer;
-    }
-    .filter-option input[type="radio"] {
-      width: 14px; height: 14px;
-      accent-color: var(--gold);
-      cursor: pointer;
-    }
-    .filter-clear {
-      font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--burgundy);
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-      margin-top: .5rem;
-      transition: opacity .2s;
-    }
-    .filter-clear:hover { opacity: .7; }
-
-    /* View toggle */
-    .view-toggle { display: flex; gap: .35rem; }
-    .view-btn {
-      width: 32px; height: 32px;
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid rgba(198,167,94,.25);
-      color: var(--text-muted);
-      background: transparent;
-      cursor: pointer;
-      transition: all .25s;
-    }
-    .view-btn.active, .view-btn:hover {
-      border-color: var(--gold);
-      color: var(--dark-brown);
-      background: rgba(198,167,94,.08);
-    }
-
-    /* List view */
-    .banknote-grid.list-view {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }
-    .banknote-grid.list-view .banknote-card {
-      display: grid;
-      grid-template-columns: 160px 1fr auto;
-      align-items: center;
-    }
-    .banknote-grid.list-view .banknote-card__image { aspect-ratio: 16/9; height: 90px; }
-    .banknote-grid.list-view .banknote-card__content { padding: 1rem 1.5rem; }
-    .banknote-grid.list-view .banknote-card__denomination { font-size: 1.1rem; }
-    .banknote-grid.list-view .banknote-card__actions { padding: 0 1.25rem; }
-
-    /* Series tab bar */
-    .series-tabs {
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-      border-bottom: 2px solid rgba(198,167,94,.2);
-      margin-bottom: 2rem;
-    }
-    .series-tabs::-webkit-scrollbar { display: none; }
-    .series-tab {
-      font-family: 'Cinzel', serif;
-      font-size: .62rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .65rem 1.1rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
-      transition: all .25s;
-      background: none;
-      border-left: none;
-      border-right: none;
-      border-top: none;
-    }
-    .series-tab:hover { color: var(--dark-brown); }
-    .series-tab.active {
-      color: var(--dark-brown);
-      border-bottom-color: var(--gold);
-      background: rgba(198,167,94,.06);
-    }
-
-    /* Pagination */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: .35rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(198,167,94,.18);
-    }
-    .page-btn {
-      width: 36px; height: 36px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      border: 1px solid rgba(198,167,94,.25);
-      color: var(--text-muted);
-      background: #fff;
-      cursor: pointer;
-      transition: all .25s;
-    }
-    .page-btn:hover, .page-btn.active {
-      border-color: var(--gold);
-      color: var(--dark-brown);
-      background: rgba(198,167,94,.08);
-    }
-    .page-btn.active { background: var(--dark-brown); color: var(--gold); border-color: var(--dark-brown); }
-
-    @media(max-width:900px){
-      .catalog-wrap { grid-template-columns: 1fr; }
-      .catalog-sidebar { position: static; height: auto; display: none; }
-      .catalog-sidebar.open { display: block; }
-      .banknote-grid.list-view { display: grid; grid-template-columns: repeat(2,1fr); }
-      .banknote-grid.list-view .banknote-card { display: block; }
-    }
-    @media(max-width:600px){
-      .catalog-main { padding: 1.5rem; }
-    }
-  </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
-<header id="header">
-  <nav class="navbar">
-    <a href="index.html" class="navbar__logo">
-      <div class="brand">
-        <img src="assets/images/lotus-logo.png" class="logo-img" alt="Thai Banknotes">
-        <div class="logo-text">
-          <div class="brand-top"><span>Thai</span><span class="brand-line"></span></div>
-          <div class="brand-bottom">Banknotes</div>
+<!-- Masthead -->
+<header id="masthead">
+  <div class="masthead">
+    <div class="masthead__main">
+      <a href="index.html" class="masthead__logo">
+        <img src="assets/images/lotus-logo.png" class="masthead__logo-img" alt="Thai Banknotes">
+        <div class="masthead__logo-text">
+          <div class="masthead__logo-name"><span>Thai</span> Banknotes</div>
+          <div class="masthead__logo-sub">Catalogue & Digital Archive</div>
         </div>
-      </div>
-    </a>
-    <ul class="navbar__nav">
-      <li><a href="catalog.html" class="navbar__link active">Series</a></li>
-      <li><a href="catalog.html" class="navbar__link active">Banknotes</a></li>
-      <li><a href="signature.html" class="navbar__link">Signatures</a></li>
-      <li><a href="index.html" class="navbar__link">Home</a></li>
-    </ul>
-    <div class="navbar__actions">
-      <button class="navbar__search" id="searchBtn" aria-label="Search">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </a>
+      <nav class="masthead__nav" aria-label="Primary">
+        <div class="mnav__item"><a href="index.html" class="mnav__link">Home</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="catalog.html" class="mnav__link active">Series</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="catalog.html" class="mnav__link">Banknotes</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="signature.html" class="mnav__link">Signatures</a></div>
+        <div class="mnav__sep"></div>
+        <div class="mnav__item"><a href="#" class="mnav__link">About</a></div>
+      </nav>
+      <form class="masthead__search-form" role="search" onsubmit="return false">
+        <input type="search" class="masthead__search-input" placeholder="Search catalogue…" aria-label="Search">
+        <button type="submit" class="masthead__search-submit" aria-label="Submit search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </form>
+      <button class="masthead__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
       </button>
-      <button class="navbar__lang" aria-label="Language"><span>🇹🇭</span></button>
-      <button class="navbar__hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
 </header>
+
+<!-- Mobile Navigation -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" class="mnav__link">Home</a>
+  <a href="catalog.html" class="mnav__link active">Series & Banknotes</a>
+  <a href="signature.html" class="mnav__link">Signatures</a>
+  <a href="#" class="mnav__link">About</a>
+</nav>
+
+<div style="height:110px"></div>
 
 <!-- ── PAGE HERO ── -->
 <section class="page-hero">
@@ -224,26 +72,26 @@
 </section>
 
 <!-- ── SERIES STRIP ── -->
-<div style="background:#FAF7F0;border-bottom:1px solid rgba(198,167,94,.18);padding:1.25rem 0;overflow-x:auto">
-  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;gap:1rem;align-items:center;flex-wrap:nowrap;min-width:max-content">
-    <span style="font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;flex-shrink:0">Jump to:</span>
-    <a href="series.html?series=first-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(198,167,94,.25)'">Series I</a>
-    <a href="series.html?series=second-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(198,167,94,.25)'">Series II</a>
-    <a href="series.html?series=third-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">Series III</a>
-    <a href="series.html?series=fourth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">Series IV</a>
-    <a href="series.html?series=fifth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">Series V</a>
-    <a href="series.html?series=sixth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">Series VI</a>
-    <a href="series.html?series=seventh-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">VII</a>
-    <a href="series.html?series=eighth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">VIII</a>
-    <a href="series.html?series=ninth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">IX</a>
-    <a href="series.html?series=tenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">X</a>
-    <a href="series.html?series=eleventh-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XI</a>
-    <a href="series.html?series=twelfth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XII</a>
-    <a href="series.html?series=thirteenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XIII</a>
-    <a href="series.html?series=fourteenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XIV</a>
-    <a href="series.html?series=fifteenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XV</a>
-    <a href="series.html?series=sixteenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);white-space:nowrap;transition:all .25s;text-decoration:none">XVI</a>
-    <a href="series.html?series=seventeenth-series" style="font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark-brown);padding:.35rem .75rem;border:1px solid rgba(198,167,94,.25);background:rgba(198,167,94,.1);white-space:nowrap;transition:all .25s;text-decoration:none">XVII ★</a>
+<div class="jump-bar">
+  <div class="jump-bar__inner">
+    <span class="jump-bar__label">Jump to:</span>
+    <a href="series.html?series=first-series" class="jump-bar__link">Series I</a>
+    <a href="series.html?series=second-series" class="jump-bar__link">Series II</a>
+    <a href="series.html?series=third-series" class="jump-bar__link">Series III</a>
+    <a href="series.html?series=fourth-series" class="jump-bar__link">Series IV</a>
+    <a href="series.html?series=fifth-series" class="jump-bar__link">Series V</a>
+    <a href="series.html?series=sixth-series" class="jump-bar__link">Series VI</a>
+    <a href="series.html?series=seventh-series" class="jump-bar__link">VII</a>
+    <a href="series.html?series=eighth-series" class="jump-bar__link">VIII</a>
+    <a href="series.html?series=ninth-series" class="jump-bar__link">IX</a>
+    <a href="series.html?series=tenth-series" class="jump-bar__link">X</a>
+    <a href="series.html?series=eleventh-series" class="jump-bar__link">XI</a>
+    <a href="series.html?series=twelfth-series" class="jump-bar__link">XII</a>
+    <a href="series.html?series=thirteenth-series" class="jump-bar__link">XIII</a>
+    <a href="series.html?series=fourteenth-series" class="jump-bar__link">XIV</a>
+    <a href="series.html?series=fifteenth-series" class="jump-bar__link">XV</a>
+    <a href="series.html?series=sixteenth-series" class="jump-bar__link">XVI</a>
+    <a href="series.html?series=seventeenth-series" class="jump-bar__link jump-bar__link--current">XVII ★</a>
   </div>
 </div>
 
@@ -300,15 +148,15 @@
   <div class="catalog-main">
 
     <!-- Toolbar -->
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem;flex-wrap:wrap;gap:1rem">
-      <div style="display:flex;align-items:center;gap:1rem">
-        <button id="sidebarToggle" style="display:none;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.45rem .9rem;border:1px solid rgba(198,167,94,.3);color:var(--dark-brown);background:transparent;cursor:pointer">⊟ Filters</button>
-        <span style="font-family:'Cinzel',serif;font-size:.72rem;color:var(--text-muted)">
-          Showing <strong id="noteCount" style="color:var(--dark-brown)">24</strong> banknotes
+    <div class="cat-toolbar">
+      <div class="cat-toolbar__left">
+        <button id="sidebarToggle" class="cat-toolbar__btn">⊟ Filters</button>
+        <span class="cat-toolbar__count">
+          Showing <strong id="noteCount">24</strong> banknotes
         </span>
       </div>
-      <div style="display:flex;align-items:center;gap:1rem">
-        <select id="sortSelect" style="font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.08em;padding:.4rem .75rem;border:1px solid rgba(198,167,94,.25);color:var(--dark-brown);background:#fff;outline:none;cursor:pointer;text-transform:uppercase">
+      <div class="cat-toolbar__right">
+        <select id="sortSelect" class="cat-toolbar__sort">
           <option value="series-asc">Series: Oldest First</option>
           <option value="series-desc">Series: Latest First</option>
           <option value="denom-asc">Denomination ↑</option>
@@ -445,48 +293,61 @@
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
-<footer>
+<!-- Footer -->
+<footer class="site-footer">
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem">
-          <img src="assets/images/lotus-logo.png" style="width:36px;height:36px;object-fit:contain" alt="">
-          <div class="footer__brand">Thai Banknotes Catalogue</div>
+        <div class="footer__brand-block">
+          <img src="assets/images/lotus-logo.png" alt="Logo">
+          <div>
+            <div class="footer__brand-name"><span>Thai</span> Banknotes</div>
+            <div class="footer__brand-sub">Catalogue & Digital Archive</div>
+          </div>
         </div>
-        <p class="footer__text">A scholarly digital archive of Thai currency — from the first series of 1880 to the present day.</p>
+        <p class="footer__desc">A scholarly digital archive dedicated to the comprehensive documentation of Thai currency history, from the first series of 1880 to the present-day Seventeenth Series.</p>
       </div>
+
       <div>
-        <h4 class="footer__title">Catalogue</h4>
+        <div class="footer__head">Catalogue</div>
         <ul class="footer__links">
-          <li><a href="catalog.html">All Banknotes</a></li>
-          <li><a href="commemorative.html">Commemorative</a></li>
-          <li><a href="signature.html">Signatures</a></li>
+          <li><a href="catalog.html" class="footer__link">All Series</a></li>
+          <li><a href="catalog.html" class="footer__link">Banknotes</a></li>
+          <li><a href="commemorative.html" class="footer__link">Commemorative</a></li>
+          <li><a href="signature.html" class="footer__link">Signatures</a></li>
         </ul>
       </div>
+
       <div>
-        <h4 class="footer__title">By Era</h4>
+        <div class="footer__head">By Era</div>
         <ul class="footer__links">
-          <li><a href="catalog.html?era=rama-v">Rama V</a></li>
-          <li><a href="catalog.html?era=rama-ix">Rama IX</a></li>
-          <li><a href="catalog.html?era=rama-x">Rama X</a></li>
+          <li><a href="catalog.html?era=rama-v" class="footer__link">Rama V · 1868–1910</a></li>
+          <li><a href="catalog.html?era=rama-vi" class="footer__link">Rama VI · 1910–1925</a></li>
+          <li><a href="catalog.html?era=rama-ix" class="footer__link">Rama IX · 1946–2016</a></li>
+          <li><a href="catalog.html?era=rama-x" class="footer__link">Rama X · 2016–Present</a></li>
         </ul>
       </div>
+
       <div>
-        <h4 class="footer__title">Info</h4>
+        <div class="footer__head">Information</div>
         <ul class="footer__links">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Methodology</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#" class="footer__link">About the Archive</a></li>
+          <li><a href="#" class="footer__link">Methodology</a></li>
+          <li><a href="#" class="footer__link">Bibliography</a></li>
+          <li><a href="#" class="footer__link">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer__bottom"><p>© 2024 Thai Banknotes Catalogue. For educational purposes.</p></div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 Thai Banknotes Catalogue. For scholarly and educational purposes.</p>
+      <span class="footer__orn">◈ Digital Archive ◈</span>
+    </div>
   </div>
 </footer>
 
 <div class="search-overlay" id="searchOverlay">
-  <button class="search-close" id="searchClose">✕</button>
+  <button class="search-close" id="searchClose">&times;</button>
   <div class="search-box"><input type="text" class="search-box__input" id="searchInput" placeholder="Search by denomination, series, year…"></div>
 </div>
 
